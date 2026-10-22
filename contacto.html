@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SL - Formulario de inscripción</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img/logo.png" alt="Logo" width="80">
+            <h1>SL - Carreras</h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="carreras.html">Carreras</a></li>
+                    <li><a href="contacto.html" class="activo">Formulario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="presentacion">
+            <h2>Inscribite</h2>
+            <p>Completá tus datos y elegí la carrera. Los campos marcados con * son obligatorios.</p>
+        </div>
+
+        <hr>
+
+        <div id="formulario">
+            <form action="mailto:slcarreras@edu.ar" method="post" enctype="text/plain">
+                <div>
+                    <label for="nombre">Nombre y apellido *</label>
+                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                </div>
+                <div>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+                </div>
+                <div>
+                    <label for="carrera">Carrera *</label>
+                    <select id="carrera" name="carrera" required>
+                        <option value="">Elegí una carrera</option>
+                        <option value="programacion">Tecnicatura en Programación</option>
+                        <option value="administracion">Licenciatura en Administración</option>
+                        <option value="contador">Contador Público</option>
+                        <option value="diseno">Diseño Gráfico</option>
+                    </select>
+                </div>
+                <fieldset>
+                    <legend>Modalidad de cursada *</legend>
+                    <div>
+                        <input type="radio" id="presencial" name="modalidad" value="presencial" required>
+                        <label for="presencial">Presencial</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="virtual" name="modalidad" value="virtual">
+                        <label for="virtual">Virtual</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label for="consulta">Consulta</label>
+                    <textarea id="consulta" name="consulta" rows="4"></textarea>
+                </div>
+                <button type="submit">Enviar inscripción</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>Universidad de SL &copy; 2026</p>
+            <p>Contacto <a href="mailto:slcarreras@edu.ar">slcarreras@edu.ar</a></p>
+        </div>
+    </footer>
+</body>
+</html>
