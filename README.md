@@ -4,7 +4,7 @@ Incluye imagenes, html, css y js.
 
 # Colaboradores
 - [Catriel Valentín Franco Jofre](https://github.com/francocatriel94-svg)
-- [Diego Juan Pablo Brito Camargo]((https://github.com/diegojuanpablo))
+- [Diego Juan Pablo Brito Camargo](https://github.com/diegojuanpablo))
 
 # Uso
 1. Abrir la pagina web.
