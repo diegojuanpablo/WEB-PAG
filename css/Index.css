@@ -80,10 +80,11 @@ hr {
 
 /* ---------- Header ---------- */
 header {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: 12px;
     padding: 12px 32px;
     background-color: var(--azul-oscuro);
