@@ -3,8 +3,8 @@ Pagina web se podrá consultar carreras, inscripciones y formularios.
 Incluye imagenes, html, css y js.
 
 # Colaboradores
-## Catriel Valentín Franco Jofre
-## Diego Juan Pablo Brito Camargo
+- [Catriel Valentín Franco Jofre](https://github.com/francocatriel94-svg)
+- [Diego Juan Pablo Brito Camargo]((https://github.com/diegojuanpablo))
 
 # Uso
 1. Abrir la pagina web.
