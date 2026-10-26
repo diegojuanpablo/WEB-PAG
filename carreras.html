@@ -24,47 +24,56 @@
     </header>
 
     <main>
+        <div id="ruta">
+            <p><a href="index.html">Inicio</a> / Carreras</p>
+        </div>
+
         <div id="presentacion">
             <h2>Carreras disponibles</h2>
             <p>Elegí la carrera que más te guste y mirá su duración y modalidad de cursada.</p>
+            <a href="#listado">Ver carreras</a>
         </div>
 
         <hr>
 
         <div id="listado">
             <h2 id="TablasTitulo">Oferta académica</h2>
-            <table class ="tablaCarreras">
-                <caption>Carreras para el próximo ciclo</caption>
-                <thead>
-                    <tr>
-                        <th>Carrera</th>
-                        <th>Duración</th>
-                        <th>Modalidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Tecnicatura en Programación</td>
-                        <td>2 años</td>
-                        <td>Presencial y virtual</td>
-                    </tr>
-                    <tr>
-                        <td>Licenciatura en Administración</td>
-                        <td>4 años</td>
-                        <td>Presencial y virtual</td>
-                    </tr>
-                    <tr>
-                        <td>Contador Público</td>
-                        <td>5 años</td>
-                        <td>Presencial</td>
-                    </tr>
-                    <tr>
-                        <td>Diseño Gráfico</td>
-                        <td>3 años</td>
-                        <td>Virtual</td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <form id="filtros">
+                <div>
+                    <label for="buscar">Buscar</label>
+                    <input type="search" id="buscar" name="buscar" placeholder="Nombre de la carrera">
+                </div>
+                <div>
+                    <label for="duracion">Duración</label>
+                    <select id="duracion" name="duracion">
+                        <option value="">Todas las duraciones</option>
+                        <option value="2">2 años</option>
+                        <option value="3">3 años</option>
+                        <option value="4">4 años</option>
+                        <option value="5">5 años</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="modalidad">Modalidad</label>
+                    <select id="modalidad" name="modalidad">
+                        <option value="">Todas las modalidades</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="virtual">Virtual</option>
+                    </select>
+                </div>
+            </form>
+
+            <div id="lista-carreras">
+                <div class="carrera">
+                    <img class="imagenCarreras" src="assets/lic-administracion.jpg" alt="Licenciatura en Administración">
+                    <h3>Licenciatura en Administración</h3>
+                    <p>Duración: 4 años</p>
+                    <p>Modalidad: Presencial y virtual</p>
+                    <a href="carreras/lic-administracion.html">Ver carrera</a>
+                </div>
+
+            </div>
         </div>
 
         <hr>
