@@ -35,9 +35,11 @@
         <div id="carrusel">
             <h2>Conocé el campus</h2>
             <div>
-                <button>Anterior</button>
-                <img src="img/portada.jpg" alt="Campus">
-                <button>Siguiente</button>
+                <button id = "Anterior" onclick="Carrusel()">Anterior</button>
+                <img id="ImagenCarrusel" src="" alt="Imagen del carrusel">
+                <button id = "Siguiente" onclick="Carrusel()">Siguiente</button>
+                <h3 id="TextoImagen"></h3>
+                <h4>Click a las imagenes para mas info</h4>
             </div>
         </div>
 
@@ -103,6 +105,33 @@
             <p>Universidad de SL &copy; 2026</p>
             <p>Contacto <a href="mailto:slcarreras@edu.ar">slcarreras@edu.ar</a></p>
         </div>
-    </footer>
+    </footeer>
+    <script>   
+    console.log("Hola, bienvenido a SL - Carreras");
+    const imagenCarrusel = document.getElementById("ImagenCarrusel");
+    const ArrayImagenes = ["assets/Biblioteca.jpg","assets/DSCN3833.jpg","assets/Laboratorios.jpg","assets/ComedorUniversitario.png"];
+    const TextoCarrusel =document.getElementById("TextoImagen");
+    TextoCarrusel.innerHTML="Biblioteca";
+    imagenCarrusel.src=imagenCarrusel.src=ArrayImagenes[0];
+    let indice = 0;
+    function Carrusel(){
+        if(indice==ArrayImagenes.length-1){
+            indice=0;
+        }else{
+            indice++;
+        }
+        if(indice==0){
+            TextoCarrusel.innerHTML="Biblioteca";
+        }else if(indice==1)
+        {
+            TextoCarrusel.innerHTML="Residencias";
+        }else if(indice==2){
+            TextoCarrusel.innerHTML="Laboratorios";
+        }else if(indice==3){
+            TextoCarrusel.innerHTML="Comedor Universitario";
+        }
+       imagenCarrusel.src = ArrayImagenes[indice];
+       console.log(ArrayImagenes[0],ArrayImagenes[1]);}
+    </script>
 </body>
 </html>

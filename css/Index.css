@@ -65,7 +65,7 @@
     --ancho-max: 1000px;
 }
 
-/* ---------- Base ---------- */
+/*  Base  */
 * {
     box-sizing: border-box;
 }
@@ -80,7 +80,7 @@ body {
 }
 
 h1, h2 {
-    margin: 0 0 12px;
+    margin: 0 0 12px; 
     line-height: 1.25;
 }
 #TablasTitulo{
@@ -107,7 +107,7 @@ hr {
 
 /* ---------- Header ---------- */
 header {
-    position: sticky;
+    position: sticky; /*para fijar el header al hacer scroll*/
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -216,9 +216,27 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
+} 
+#carrusel > div > h3{
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    order: 3;
 }
-
+#carrusel >div>h4{
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    order: 4;
+}
 #carrusel img {
     width: 100%;
     max-width: 640px;
@@ -226,6 +244,10 @@ main {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+#carrusel img:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
 }
 
 #carrusel button {
