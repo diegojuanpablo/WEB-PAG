@@ -35,9 +35,11 @@
         <div id="carrusel">
             <h2>Conocé el campus</h2>
             <div>
-                <button id = "Anterior" onclick="Carrusel()">Anterior</button>
-                <img id="ImagenCarrusel" src="" alt="Imagen del carrusel">
-                <button id = "Siguiente" onclick="Carrusel()">Siguiente</button>
+                <button id = "Anterior" onclick="Atras(indice)">Anterior</button>
+                <a id="DireccionImagen" href="">
+                    <img id="ImagenCarrusel" src="" alt="Imagen del carrusel">
+                </a>
+                <button id = "Siguiente" onclick="Adelante(indice)">Siguiente</button>
                 <h3 id="TextoImagen"></h3>
                 <h4>Click a las imagenes para mas info</h4>
             </div>
@@ -111,24 +113,44 @@
     const imagenCarrusel = document.getElementById("ImagenCarrusel");
     const ArrayImagenes = ["assets/Biblioteca.jpg","assets/DSCN3833.jpg","assets/Laboratorios.jpg","assets/ComedorUniversitario.png"];
     const TextoCarrusel =document.getElementById("TextoImagen");
+    const DireccionImagen=document.getElementById("DireccionImagen");
+    DireccionImagen.href="Campus/Biblioteca.html";
     TextoCarrusel.innerHTML="Biblioteca";
     imagenCarrusel.src=imagenCarrusel.src=ArrayImagenes[0];
     let indice = 0;
-    function Carrusel(){
-        if(indice==ArrayImagenes.length-1){
-            indice=0;
-        }else{
-            indice++;
+    function Adelante(a){
+      if(a==ArrayImagenes.length-1){
+        a=0;
+    }
+    else{
+        a++;
+    }
+    Carrusel(a);
+    }
+    function Atras(a){
+        if(a==0){
+            a=ArrayImagenes.length-1;
         }
+        else{
+             a--;
+        }
+        Carrusel(a);
+    }
+    function Carrusel(Nuevoindice){
+        indice=Nuevoindice;
         if(indice==0){
             TextoCarrusel.innerHTML="Biblioteca";
+            DireccionImagen.href="Campus/Biblioteca.html";
         }else if(indice==1)
         {
             TextoCarrusel.innerHTML="Residencias";
+            DireccionImagen.href="Campus/Residencias.html";
         }else if(indice==2){
             TextoCarrusel.innerHTML="Laboratorios";
+            DireccionImagen.href="Campus/Laboratorio.html";
         }else if(indice==3){
             TextoCarrusel.innerHTML="Comedor Universitario";
+            DireccionImagen.href="Campus/Comedor.html";
         }
        imagenCarrusel.src = ArrayImagenes[indice];
        console.log(ArrayImagenes[0],ArrayImagenes[1]);}
