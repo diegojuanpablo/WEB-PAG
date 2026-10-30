@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SL - Carreras disponibles</title>
-    <link rel="stylesheet" href="css/Index.css">
+    <link rel="stylesheet" href="assets/css/Index.css">
+    <script src="assets/js/style.js" defer></script>
+
 </head>
 <body>
     <header>
         <div>
-            <img src="assets/LOGO-SL-CARRERAS.png" alt="Logo" width="80">
+            <img src="assets/img/LOGO-SL-CARRERAS.png" alt="Logo" width="80">
             <h1>SL - Carreras</h1>
         </div>
         <div>
@@ -34,6 +36,21 @@
             <a href="#listado">Ver carreras</a>
         </div>
 
+        <hr>
+
+        <div class="carrusel" id="carrusel-carreras">
+            <h2>Conocé nuestras carreras</h2>
+            <div>
+                <button class="anterior">Anterior</button>
+                <a href="">
+                    <img src="" alt="">
+                    <h3></h3>
+                </a>
+                <button class="siguiente">Siguiente</button>
+                <h4>Click a las imágenes para más info</h4>
+            </div>
+        </div>
+        
         <hr>
 
         <div id="listado">
@@ -66,7 +83,7 @@
 
             <div id="lista-carreras">
                 <div class="carrera">
-                    <img class="imagenCarreras" src="assets/lic-administracion.jpg" alt="Licenciatura en Administración">
+                    <img class="imagenCarreras" src="assets/img/carreras/lic-administracion.jpg" alt="Licenciatura en Administración">
                     <h3>Licenciatura en Administración</h3>
                     <p>Duración: 4 años</p>
                     <p>Modalidad: Presencial y virtual</p>
@@ -84,11 +101,6 @@
         </div>
     </main>
 
-    <footer>
-        <div>
-            <p>Universidad de SL &copy; 2026</p>
-            <p>Contacto <a href="mailto:slcarreras@edu.ar">slcarreras@edu.ar</a></p>
-        </div>
-    </footer>
+    <div id="footer"></div>
 </body>
 </html>

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SL - Carreras</title>
-    <link rel="stylesheet" href="css/Index.css">
+    <link rel="stylesheet" href="assets/css/Index.css">
+    <script src="assets/js/style.js" defer></script>
 </head>
 <body>
     <header>
         <div>
-            <img src="assets/LOGO-SL-CARRERAS.png" alt="Logo" width="80">
+            <img src="assets/img/LOGO-SL-CARRERAS.png" alt="Logo" width="80">
             <h1>SL - Carreras</h1>
         </div>
         <div>
@@ -32,19 +33,18 @@
 
         <hr>
 
-        <div id="carrusel">
+        <div class="carrusel" id="carrusel-campus">
             <h2>Conocé el campus</h2>
             <div>
-                <button id = "Anterior" onclick="Atras(indice)">Anterior</button>
-                <a id="DireccionImagen" href="">
-                    <img id="ImagenCarrusel" src="" alt="Imagen del carrusel">
+                <button class="anterior">Anterior</button>
+                <a href="">
+                    <img src="" alt="">
                 </a>
-                <button id = "Siguiente" onclick="Adelante(indice)">Siguiente</button>
-                <h3 id="TextoImagen"></h3>
-                <h4>Click a las imagenes para mas info</h4>
+                <button class="siguiente">Siguiente</button>
+                <h3></h3>
+                <h4>Click a las imágenes para más info</h4>
             </div>
         </div>
-
         <hr>
 
         <div id="beneficios">
@@ -61,7 +61,7 @@
 
         <div id="pasos">
             <h2>¿Cómo me inscribo?</h2>
-            <ol> <!-- con span no queda feo, queda como unico -->
+            <ol> <!-- con span no queda feo, no queda con saltos de linea -->
                 <li><span>Mirá las <a href="carreras.html">carreras</a> y elegí la que te interese.</span></li>
                 <li><span>Completá tus datos desde el <a href="contacto.html">formulario</a>.</span></li>
                 <li><span>Recibí la confirmación por mail.</span></li>
@@ -102,58 +102,6 @@
         </div>
     </main>
 
-    <footer>
-        <div>
-            <p>Universidad de SL &copy; 2026</p>
-            <p>Contacto <a href="mailto:slcarreras@edu.ar">slcarreras@edu.ar</a></p>
-        </div>
-    </footeer>
-    <script>   
-    console.log("Hola, bienvenido a SL - Carreras");
-    const imagenCarrusel = document.getElementById("ImagenCarrusel");
-    const ArrayImagenes = ["assets/Biblioteca.jpg","assets/DSCN3833.jpg","assets/Laboratorios.jpg","assets/ComedorUniversitario.png"];
-    const TextoCarrusel =document.getElementById("TextoImagen");
-    const DireccionImagen=document.getElementById("DireccionImagen");
-    DireccionImagen.href="Campus/Biblioteca.html";
-    TextoCarrusel.innerHTML="Biblioteca";
-    imagenCarrusel.src=imagenCarrusel.src=ArrayImagenes[0];
-    let indice = 0;
-    function Adelante(a){
-      if(a==ArrayImagenes.length-1){
-        a=0;
-    }
-    else{
-        a++;
-    }
-    Carrusel(a);
-    }
-    function Atras(a){
-        if(a==0){
-            a=ArrayImagenes.length-1;
-        }
-        else{
-             a--;
-        }
-        Carrusel(a);
-    }
-    function Carrusel(Nuevoindice){
-        indice=Nuevoindice;
-        if(indice==0){
-            TextoCarrusel.innerHTML="Biblioteca";
-            DireccionImagen.href="Campus/Biblioteca.html";
-        }else if(indice==1)
-        {
-            TextoCarrusel.innerHTML="Residencias";
-            DireccionImagen.href="Campus/Residencias.html";
-        }else if(indice==2){
-            TextoCarrusel.innerHTML="Laboratorios";
-            DireccionImagen.href="Campus/Laboratorio.html";
-        }else if(indice==3){
-            TextoCarrusel.innerHTML="Comedor Universitario";
-            DireccionImagen.href="Campus/Comedor.html";
-        }
-       imagenCarrusel.src = ArrayImagenes[indice];
-       console.log(ArrayImagenes[0],ArrayImagenes[1]);}
-    </script>
+    <div id="footer"></div>
 </body>
 </html>
