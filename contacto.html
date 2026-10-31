@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SL - Formulario de inscripción</title>
     <link rel="stylesheet" href="assets/css/Index.css">
-    <script src="assets/js/style.js" defer></script>
+    <script src="assets/js/Javascript.js" defer></script>
 
 </head>
 <body>
@@ -33,22 +33,32 @@
 
         <hr>
 
-        <div id="formulario">
-            <form action="mailto:slcarreras@edu.ar" method="post" enctype="text/plain">
+        <div id="DIVformulario">
+            <form id="formulario" action="mailto:slcarreras@edu.ar" method="post" enctype="text/plain">
+                <h3>Formulario de inscripción</h3>
+                <img src="assets/img/LOGO-SL-CARRERAS.png" id="DentroFormulario" alt="Logo" >
                 <div>
-                    <label for="nombre">Nombre y apellido *</label>
-                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    <label for="nombre" class="formularioLabel">Nombre y apellido *</label>
+                    <input type="text" id="nombre" name="nombre" class="formularioInput" autocomplete="name" required>
                 </div>
                 <div>
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <label for="apellido" class="formularioLabel">Apellido *</label>
+                    <input type="text" id="apellido" name="apellido" class="formularioInput" autocomplete="family-name" required>
                 </div>
                 <div>
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+                    <label for="dni" class="formularioLabel">DNI *</label>
+                    <input type="text" id="dni" name="dni" class="formularioInput" autocomplete= "off" required>
                 </div>
                 <div>
-                    <label for="carrera">Carrera *</label>
+                    <label for="email" class="formularioLabel">Email *</label>
+                    <input type="email" id="email" name="email" class="formularioInput" autocomplete="email" required>
+                </div>
+                <div>
+                    <label for="telefono" class="formularioLabel">Teléfono</label>
+                    <input type="tel" id="telefono" class="formularioInput" name="telefono" autocomplete="tel">
+                </div>
+                <div>
+                    <label for="carrera" class="formularioLabel">Carrera *</label>
                     <select id="carrera" name="carrera" required>
                         <option value="">Elegí una carrera</option>
                         <option value="programacion">Tecnicatura en Programación</option>
@@ -57,22 +67,10 @@
                         <option value="diseno">Diseño Gráfico</option>
                     </select>
                 </div>
-                <fieldset>
-                    <legend>Modalidad de cursada *</legend>
-                    <div>
-                        <input type="radio" id="presencial" name="modalidad" value="presencial" required>
-                        <label for="presencial">Presencial</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="virtual" name="modalidad" value="virtual">
-                        <label for="virtual">Virtual</label>
-                    </div>
-                </fieldset>
-                <div>
-                    <label for="consulta">Consulta</label>
-                    <textarea id="consulta" name="consulta" rows="4"></textarea>
+                    <label for="consulta" class="formularioLabel">Consulta</label>
+                    <textarea id="consulta" name="consulta" rows="4" class="formularioInput"></textarea>
                 </div>
-                <button type="submit">Enviar inscripción</button>
+                <button type="submit" id="btnEnviar"s>Enviar inscripción</button>
             </form>
         </div>
     </main>

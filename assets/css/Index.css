@@ -116,7 +116,6 @@ header {
     padding: 12px 32px;
     background-color: var(--azul-oscuro);
     color: white;
-    view-transition-name: cabecera;
 }
 
 /* Primer div del header: logo + título */
@@ -607,3 +606,90 @@ footer a {
 #inscripcion p {
     margin: 0;
 }
+
+
+/*Estilos para el formulario */
+/* Campo con error */
+.invalido {
+    border: 2px solid #c62828;
+    background-color: #fdecea;
+}
+
+.invalido:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.25);
+}
+
+/* Mensaje de error */
+.mensaje-error {
+    margin: 4px 0 8px;
+    color: #c62828;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Ícono delante del texto */
+.mensaje-error::before {
+    content: "⚠";
+}
+#DIVformulario{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    background-color: var(--azul);
+    padding: 28px 24px;
+    border-radius: 10px;
+    color: white;
+}   
+.formularioLabel{
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1rem;
+    display: flex;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: white;
+}
+#formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center center;
+}
+.formularioInput{
+    height: 35px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
+}
+#btnEnviar{
+    margin-top: 12px;
+    padding: 10px 16px;
+    background-color: var(--acento);
+    color: var(--azul-oscuro);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.2s ease;
+}
+#btnEnviar:hover {
+    transform: scale(1.06);
+}
+#carrera{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
+} 
+#DentroFormulario{
+   width: 80px;
+   height: 80px;
+   object-fit: cover;
+   
+}  
