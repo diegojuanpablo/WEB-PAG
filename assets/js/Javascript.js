@@ -1,4 +1,29 @@
-    // carrusel
+// carrusel
+console.log("1. Script cargado. Página:", window.location.pathname);
+const ArregloCarruselAutomaticoBiblioteca = [
+    "../assets/img/ImagenesBiblioteca/ImagenBiblioteca1.jpg",
+    "../assets/img/ImagenesBiblioteca/ImagenBiblioteca2.jpg",
+    "../assets/img/ImagenesBiblioteca/ImagenBiblioteca3.jpg",
+    "../assets/img/ImagenesBiblioteca/ImagenBiblioteca4.png"
+];
+let indice = 0;
+const imagenCarruselBiblioteca = document.getElementById("imagenBiblioteca");
+console.log("2. Imagen encontrada:", imagenCarruselBiblioteca);
+function CambiarImagen() {
+    if (ArregloCarruselAutomaticoBiblioteca.length - 1 == indice) {
+        indice = 0;
+    } else {
+        indice++;
+    }
+    imagenCarruselBiblioteca.src = ArregloCarruselAutomaticoBiblioteca[indice];
+console.log("3. Cambió a:", imagenCarruselBiblioteca.src);
+}
+if (imagenCarruselBiblioteca) {
+    imagenCarruselBiblioteca.src = ArregloCarruselAutomaticoBiblioteca[0];
+    console.log("Carrusel Biblioteca iniciado");
+    setInterval(CambiarImagen, 3000);
+}
+
 function crearCarrusel(idContenedor, diapositivas) {
     const contenedor = document.getElementById(idContenedor);
     if (!contenedor) return; // no contiene carrusel
@@ -46,9 +71,10 @@ crearCarrusel("carrusel-campus", [
 ]);
  
 crearCarrusel("carrusel-carreras", [
-    { src: "assets/img/carreras/tec-programacion.jpg", alt: "Tecnicatura en Programación", texto: "Tecnicatura en Programación", enlace: "carreras/tec-programacion.html" },
+    { src: "assets/img/carreras/tec-programacion.jpg", alt: "Tecnicatura en Programación", texto: "Tecnicatura en Programación", enlace: "carreras/TecnicaturaProgramacion.html" },
     { src: "assets/img/carreras/lic-administracion.jpg", alt: "Licenciatura en Administración", texto: "Licenciatura en Administración", enlace: "carreras/lic-administracion.html" },
-    { src: "assets/img/carreras/contador-publico.jpg", alt: "Contador Público", texto: "Contador Público", enlace: "carreras/contador-publico.html" },
+    { src: "assets/img/carreras/contador-publico.jpg", alt: "Contador Público", texto: "Contador Público", enlace: "carreras/ContadorPublico.html" },
+    { src: "assets/img/carreras/diseno-grafico.jpg", alt: "Diseño Gráfico", texto: "Diseño Gráfico", enlace: "carreras/DiseñoGrafico.html" }
 ]);
 
     // footer
@@ -97,7 +123,6 @@ const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$/;
 const regexDni = /^\d{7,8}$/;
 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const regexTelefono = /^\d{10}$/;
-
 // Validación
 function validarFormulario(event) {
     event.preventDefault();
