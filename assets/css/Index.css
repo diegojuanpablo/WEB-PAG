@@ -632,64 +632,85 @@ footer a {
 .mensaje-error::before {
     content: "⚠";
 }
-#DIVformulario{
-    width: 50%;
-    display: flex;
-    justify-content: left;
-    background-color: var(--azul);
-    padding: 28px 24px;
-    border-radius: 10px;
-    color: white;
-}   
-.formularioLabel{
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 1rem;
-    display: flex;
-    margin-bottom: 4px;
-    font-weight: 600;
-    color: white;
-}
-#formulario{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center center;
-}
-.formularioInput{
-    height: 35px;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
+/* ---------- Formulario ---------- */
+#DIVformulario {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 32px 28px;
     background-color: white;
+    border-radius: 12px;
+    border-top: 6px solid var(--acento);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
-#btnEnviar{
-    margin-top: 12px;
-    padding: 10px 16px;
-    background-color: var(--acento);
+
+#formulario h3 {
+    margin: 0 0 8px;
+    text-align: center;
     color: var(--azul-oscuro);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 999px;
-    transition: transform 0.2s ease;
+    font-size: 1.5rem;
 }
-#btnEnviar:hover {
-    transform: scale(1.06);
+
+#DentroFormulario {
+    display: block;
+    width: 70px;
+    height: auto;
+    margin: 0 auto 20px;
 }
-#carrera{
+
+#formulario > div {
+    margin-bottom: 16px;
+}
+
+/* Etiquetas */
+.formularioLabel {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--azul-oscuro);
+}
+
+/* Campos de texto, email, teléfono, select y textarea */
+.formularioInput,
+#carrera {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--texto);
+    background-color: var(--gris);
     border: 1px solid var(--borde);
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
+    border-radius: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#formulario textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.formularioInput:focus,#carrera:focus {
+    outline: none;
+    border-color: var(--azul);
     background-color: white;
-} 
-#DentroFormulario{
-   width: 80px;
-   height: 80px;
-   object-fit: cover;
-   
-}  
+    box-shadow: 0 0 0 3px
+}
+
+
+#btnEnviar {
+    display: flex;
+    width: 17%;
+    padding: 12px;
+    font: inherit;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: #f2a900;
+    border-color: var(--azulclaro);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}    
+#btnEnviar:hover {
+    background-color: #e59400;
+    transform: scale(1.05);
+}

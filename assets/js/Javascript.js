@@ -1,29 +1,49 @@
 // carrusel
-console.log("1. Script cargado. Página:", window.location.pathname);
 const ArregloCarruselAutomaticoBiblioteca = [
     "../assets/img/ImagenesBiblioteca/ImagenBiblioteca1.jpg",
     "../assets/img/ImagenesBiblioteca/ImagenBiblioteca2.jpg",
     "../assets/img/ImagenesBiblioteca/ImagenBiblioteca3.jpg",
     "../assets/img/ImagenesBiblioteca/ImagenBiblioteca4.png"
 ];
-let indice = 0;
+const ArregloCarruselAutomaticoComedor=[
+    "../assets/img/ImagenesComedor/ComedorUniversitario1.avif",
+    "../assets/img/ImagenesComedor/ComedorUniversitario2.jpg",
+    "../assets/img/ImagenesComedor/ComedorUniversitario3.avif",
+    "../assets/img/ImagenesComedor/ComedorUniversitario4.avif"
+];
+let indiceBiblioteca = 0;
 const imagenCarruselBiblioteca = document.getElementById("imagenBiblioteca");
+const imagenCarruselComedor = document.getElementById("imagenComedor");
 console.log("2. Imagen encontrada:", imagenCarruselBiblioteca);
-function CambiarImagen() {
-    if (ArregloCarruselAutomaticoBiblioteca.length - 1 == indice) {
-        indice = 0;
+function CambiarImagenBiblioteca() {
+    if (ArregloCarruselAutomaticoBiblioteca.length - 1 == indiceBiblioteca) {
+        indiceBiblioteca = 0;
     } else {
-        indice++;
+        indiceBiblioteca++;
     }
-    imagenCarruselBiblioteca.src = ArregloCarruselAutomaticoBiblioteca[indice];
+    imagenCarruselBiblioteca.src = ArregloCarruselAutomaticoBiblioteca[indiceBiblioteca];
 console.log("3. Cambió a:", imagenCarruselBiblioteca.src);
 }
 if (imagenCarruselBiblioteca) {
     imagenCarruselBiblioteca.src = ArregloCarruselAutomaticoBiblioteca[0];
-    console.log("Carrusel Biblioteca iniciado");
-    setInterval(CambiarImagen, 3000);
+    setInterval(CambiarImagenBiblioteca, 3000);
 }
+// carrusel comedor
 
+let indiceComedor = 0;
+function CambiarImagenComedor() {
+    if (ArregloCarruselAutomaticoComedor.length - 1 == indiceComedor) {
+        indiceComedor = 0;
+    } else {
+        indiceComedor++;
+    }
+    imagenCarruselComedor.src = ArregloCarruselAutomaticoComedor[indiceComedor];
+    console.log("3. Cambió a:", imagenCarruselComedor.src);
+}
+if (imagenCarruselComedor) {
+    imagenCarruselComedor.src = ArregloCarruselAutomaticoComedor[0];
+    setInterval(CambiarImagenComedor, 3000);
+}
 function crearCarrusel(idContenedor, diapositivas) {
     const contenedor = document.getElementById(idContenedor);
     if (!contenedor) return; // no contiene carrusel
@@ -107,7 +127,6 @@ function mostrarError(campo, texto) {
     // Lo inserta justo debajo del input
     campo.insertAdjacentElement("afterend", mensaje);
 }
-
 // Limpia
 function limpiarErrores() {
     // Elimina la clase de CSS de todos los campos
@@ -117,7 +136,6 @@ function limpiarErrores() {
     const mensajes = form.querySelectorAll(".mensaje-error");
     mensajes.forEach(mensaje => mensaje.remove());
 }
-
 // Expresiones regulares
 const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$/;
 const regexDni = /^\d{7,8}$/;
@@ -127,9 +145,7 @@ const regexTelefono = /^\d{10}$/;
 function validarFormulario(event) {
     event.preventDefault();
     limpiarErrores();            // una sola vez, al principio
-
     let valido = true;
-
     if (!regexNombre.test(nombre.value.trim())) {
         mostrarError(nombre, "Ingresá un nombre válido (solo letras).");
         valido = false;
@@ -162,10 +178,7 @@ function validarFormulario(event) {
     }
     if (valido) {
         
-        form.submit(); 
-        
+        form.submit();         
     }
-
 }
-
 form.addEventListener("submit", validarFormulario);
