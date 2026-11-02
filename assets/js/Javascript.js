@@ -49,7 +49,6 @@ crearCarrusel("carrusel-carreras", [
     { src: "assets/img/carreras/tec-programacion.jpg", alt: "Tecnicatura en Programación", texto: "Tecnicatura en Programación", enlace: "carreras/tec-programacion.html" },
     { src: "assets/img/carreras/lic-administracion.jpg", alt: "Licenciatura en Administración", texto: "Licenciatura en Administración", enlace: "carreras/lic-administracion.html" },
     { src: "assets/img/carreras/contador-publico.jpg", alt: "Contador Público", texto: "Contador Público", enlace: "carreras/contador-publico.html" },
-    { src: "assets/img/carreras/diseno-grafico.jpg", alt: "Diseño Gráfico", texto: "Diseño Gráfico", enlace: "carreras/diseno-grafico.html" }
 ]);
 
     // footer
