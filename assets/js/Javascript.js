@@ -148,7 +148,9 @@ crearCarrusel("carrusel-carreras", [
     // footer
 const contenedorFooter = document.getElementById("footer");
 if (contenedorFooter) {     // si hay un elemento con id="footer"
-    const rutaFooter = window.location.pathname.includes("/Campus/") ? "../footer.html" : "footer.html";
+    const enSubcarpeta = window.location.pathname.includes("/Campus/") || window.location.pathname.includes("/carreras/");  // las subcarpetas donde queremos que busque el footer
+    const rutaFooter = enSubcarpeta ? "../footer.html" : "footer.html";
+
     fetch(rutaFooter)
         .then(respuesta => {    // vemos si esta todo bien
             if (!respuesta.ok) {
