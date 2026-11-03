@@ -211,7 +211,7 @@ function MostrarDatosGuardados(datos,ContenedorPadre){
     titulo.innerHTML = "Datos guardados:";
     resumen.appendChild(titulo);
     const lista = document.createElement("ul");
-    const datos ={
+    const etiquetas ={
     nombre:"Nombre",
     apellido:"Apellido",
     dni:"DNI",
@@ -220,10 +220,10 @@ function MostrarDatosGuardados(datos,ContenedorPadre){
     carrera:"Carrera",
     consulta:"Consulta"
     };
-        for (const clave in datos) {
+        for (const clave in etiquetas) {
         const item = document.createElement("li");
         const valor = datos[clave] === "" ? "No indicado" : datos[clave];
-        item.textContent = datos[clave] + ": " + valor;
+        item.textContent = etiquetas[clave] + ": " + valor;
         lista.appendChild(item);
     }
 
