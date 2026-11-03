@@ -758,3 +758,21 @@ footer a {
     margin: 0;
     padding-left: 20px;
 }
+.botonPlan {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    font: inherit;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: var(--azul);
+    border-color: var(--azulclaro);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.botonPlan:hover {
+    background-color: var(--azul-oscuro);
+    transform: scale(1.05);
+}
