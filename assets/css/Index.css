@@ -420,10 +420,27 @@ main {
 /* ---------- Footer ---------- */
 footer {
     margin-top: 24px;
-    padding: 24px 32px;
+    padding: 16px 32px;
     background-color: var(--azul-oscuro);
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+footer div:first-child {    /* derechos de autor */
+    flex: 1;
+}
+
+footer div:last-child {     /* información */
+    flex: 0 0 auto;
+    margin-right: 15px;
+    text-align: right;
+}
+
+footer h3 {
+    margin: 0 0 10px;
 }
 
 footer p {
