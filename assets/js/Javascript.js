@@ -44,6 +44,7 @@ if (imagenCarruselBiblioteca) {
 }
 // carrusel comedor
 
+
 let indiceComedor = 0;
 function CambiarImagenComedor() {
     if (ArregloCarruselAutomaticoComedor.length - 1 == indiceComedor) {
@@ -196,7 +197,53 @@ const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$/;
 const regexDni = /^\d{7,8}$/;
 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const regexTelefono = /^\d{10}$/;
+
+
+// Guardado de datos.
+function MostrarDatosGuardados(datos,ContenedorPadre){
+    const anterior=document.getElementById("resumen");
+    if(anterior){
+        anterior.remove();
+    }
+    const resumen = document.createElement("div");
+    resumen.id = "resumen";
+    const titulo = document.createElement("h3");
+    titulo.innerHTML = "Datos guardados:";
+    resumen.appendChild(titulo);
+    const lista = document.createElement("ul");
+    const datos ={
+    nombre:"Nombre",
+    apellido:"Apellido",
+    dni:"DNI",
+    email:"Email",
+    telefono:"Teléfono",
+    carrera:"Carrera",
+    consulta:"Consulta"
+    };
+        for (const clave in datos) {
+        const item = document.createElement("li");
+        const valor = datos[clave] === "" ? "No indicado" : datos[clave];
+        item.textContent = datos[clave] + ": " + valor;
+        lista.appendChild(item);
+    }
+
+    resumen.appendChild(lista);
+    ContenedorPadre.appendChild(resumen);
+}
 // Validación
+
+function MostrarMensaje(mensaje="Formulario enviado correctamente")
+{   const anterior=document.getElementById("mensaje");
+   if(anterior)
+    {
+        anterior.remove();
+    } 
+   const mensajeDiv=document.createElement("div");
+ mensajeDiv.id="mensaje";
+    mensajeDiv.className="mensaje-exito";
+    mensajeDiv.textContent=mensaje;
+    form.appendChild(mensajeDiv);
+}
 function validarFormulario(event) {
     event.preventDefault();
     limpiarErrores();            // una sola vez, al principio
@@ -232,8 +279,18 @@ function validarFormulario(event) {
         valido = false;
     }
     if (valido) {
-        
-        form.submit();         
+        const datos = {
+            nombre: nombre.value.trim(),
+            apellido: apellido.value.trim(),
+            dni: dni.value.trim(),
+            email: email.value.trim(),
+            telefono: telefono.value.trim(),
+            carrera: carrera.value,
+            consulta: document.getElementById("consulta").value.trim()
+        };
+        MostrarDatosGuardados(datos,document.getElementById("DIVformulario"));
+        MostrarMensaje();
+        form.reset();
     }
 }
 form.addEventListener("submit", validarFormulario);
