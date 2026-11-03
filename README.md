@@ -16,39 +16,18 @@ https://diegojuanpablo.github.io/WEB-PAG/
 
 ## Estructura del proyecto
 ```
--- assets/      imagenes/logo
--- css/         styles .css
--- js/          scripts .js
--- carreras/    paginas de las carreras
-
-- index.html
-- carreras.html
-- contacto.html
-
-- readme.md
-
 -- assets/
-    -- css/                 css
+    -- css/                     css
         -- Index.css
-    -- img/                 imagenes
+    -- img/                     imagenes
         -- campus/
         -- carreras/
-        -- ImagenesBiblioteca/
-        -- ImagenesComedor/
-        -- ImagenesLab.../
-        -- ImagenesResi.../
-    -- js/                  javascript
+    -- js/                      javascript
         -- Javascript.js
+    -- Campus/                  paginas del campus
+    -- carreras/                paginas de carreras
 
--- Campus/                  paginas del campus
-    -- Biblioteca.html
-    -- Comedor.html
-    -- Laboratorio.html
-    -- Residencias.html
-
--- carreras/                paginas de carreras
-
--- Raiz                     raiz del proyecto
+-- Raiz                         raiz del proyecto
   - index.html
   - carreras.html
   - contacto.html
