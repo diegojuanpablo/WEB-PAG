@@ -32,5 +32,6 @@ https://diegojuanpablo.github.io/WEB-PAG/
   - carreras.html
   - contacto.html
   - footer.html
+  - favicon.ico
   - readme.md
 ```
