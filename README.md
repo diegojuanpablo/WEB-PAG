@@ -26,4 +26,32 @@ https://diegojuanpablo.github.io/WEB-PAG/
 - contacto.html
 
 - readme.md
+
+-- assets/
+    -- css/                 css
+        -- Index.css
+    -- img/                 imagenes
+        -- campus/
+        -- carreras/
+        -- ImagenesBiblioteca/
+        -- ImagenesComedor/
+        -- ImagenesLab.../
+        -- ImagenesResi.../
+    -- js/                  javascript
+        -- Javascript.js
+
+-- Campus/                  paginas del campus
+    -- Biblioteca.html
+    -- Comedor.html
+    -- Laboratorio.html
+    -- Residencias.html
+
+-- carreras/                paginas de carreras
+
+-- Raiz                     raiz del proyecto
+  - index.html
+  - carreras.html
+  - contacto.html
+  - footer.html
+  - readme.md
 ```
