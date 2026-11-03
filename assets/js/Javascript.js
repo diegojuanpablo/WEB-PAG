@@ -11,9 +11,23 @@ const ArregloCarruselAutomaticoComedor=[
     "../assets/img/ImagenesComedor/ComedorUniversitario3.avif",
     "../assets/img/ImagenesComedor/ComedorUniversitario4.avif"
 ];
+const ArregloCarruselAutomaticoResidencia=[
+    "../assets/img/ImagenesResidencia/Residencias_1.jpg",
+    "../assets/img/ImagenesResidencia/Residencias_2.jpg",
+    "../assets/img/ImagenesResidencia/Residencias_3.jpg",
+    "../assets/img/ImagenesResidencia/Residencias_4.jpg"
+];
+const ArregloCarruselAutomaticoLaboratorio=[
+    "../assets/img/ImagenesLaboratorio/lab1.jpg",
+    "../assets/img/ImagenesLaboratorio/lab2.jpg",
+    "../assets/img/ImagenesLaboratorio/lab3.jpg",
+    "../assets/img/ImagenesLaboratorio/lab4.jpg"
+];
 let indiceBiblioteca = 0;
 const imagenCarruselBiblioteca = document.getElementById("imagenBiblioteca");
 const imagenCarruselComedor = document.getElementById("imagenComedor");
+const imagenCarruselResidencia = document.getElementById("imagenResidencia"); 
+const imagenCarruselLaboratorio = document.getElementById("imagenLaboratorio");
 console.log("2. Imagen encontrada:", imagenCarruselBiblioteca);
 function CambiarImagenBiblioteca() {
     if (ArregloCarruselAutomaticoBiblioteca.length - 1 == indiceBiblioteca) {
@@ -44,6 +58,39 @@ if (imagenCarruselComedor) {
     imagenCarruselComedor.src = ArregloCarruselAutomaticoComedor[0];
     setInterval(CambiarImagenComedor, 3000);
 }
+// carrusel residencias
+
+let indiceResidencia = 0;
+function CambiarImagenResidencia() {
+    if (ArregloCarruselAutomaticoResidencia.length - 1 == indiceResidencia) {
+        indiceResidencia = 0;
+    } else {
+        indiceResidencia++;
+    }
+    imagenCarruselResidencia.src = ArregloCarruselAutomaticoResidencia[indiceResidencia];
+    console.log("5. Cambió a:", imagenCarruselResidencia.src);
+}
+if (imagenCarruselResidencia) {
+    imagenCarruselResidencia.src = ArregloCarruselAutomaticoResidencia[0];
+    setInterval(CambiarImagenResidencia, 3000);
+}
+// carrusel laboratorio
+
+let indiceLaboratorio = 0;
+function CambiarImagenLaboratorio() {
+    if (ArregloCarruselAutomaticoLaboratorio.length - 1 == indiceLaboratorio) {
+        indiceLaboratorio = 0;
+    } else {
+        indiceLaboratorio++;
+    }
+    imagenCarruselLaboratorio.src = ArregloCarruselAutomaticoLaboratorio[indiceLaboratorio];
+    console.log("4. Cambió a:", imagenCarruselLaboratorio.src);
+}
+if (imagenCarruselLaboratorio) {
+    imagenCarruselLaboratorio.src = ArregloCarruselAutomaticoLaboratorio[0];
+    setInterval(CambiarImagenLaboratorio, 3000);
+}
+
 function crearCarrusel(idContenedor, diapositivas) {
     const contenedor = document.getElementById(idContenedor);
     if (!contenedor) return; // no contiene carrusel
@@ -99,10 +146,18 @@ crearCarrusel("carrusel-carreras", [
 
     // footer
 const contenedorFooter = document.getElementById("footer");
-if (contenedorFooter) {
-    fetch("footer.html")
-        .then(respuesta => respuesta.text())
-        .then(html => contenedorFooter.innerHTML = html);
+if (contenedorFooter) {     // si hay un elemento con id="footer"
+    const rutaFooter = window.location.pathname.includes("/Campus/") ? "../footer.html" : "footer.html";
+    fetch(rutaFooter)
+        .then(respuesta => {    // vemos si esta todo bien
+            if (!respuesta.ok) {
+                throw new Error("No se pudo cargar el footer.");
+            }
+
+            return respuesta.text();    // convertimos el contenido en texto
+        })
+        .then(html => { contenedorFooter.innerHTML = html; })   // metemos el footer
+        .catch(error => console.error("Error al cargar el footer:", error));    // cualquier otro error, lo obtenemos
 }
 // Formulario
 const form = document.getElementById("formulario");
