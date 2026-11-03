@@ -24,6 +24,7 @@ https://diegojuanpablo.github.io/WEB-PAG/
         -- carreras/
     -- js/                      javascript
         -- Javascript.js
+        -- PlanDeEstudios.js
     -- Campus/                  paginas del campus
     -- carreras/                paginas de carreras
 
