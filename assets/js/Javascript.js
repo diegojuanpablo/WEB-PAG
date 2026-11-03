@@ -295,4 +295,6 @@ function validarFormulario(event) {
         form.reset();
     }
 }
-form.addEventListener("submit", validarFormulario);
+if(form) {
+    form.addEventListener("submit", validarFormulario);
+}
